@@ -38,6 +38,34 @@ app.get('/bar-graph-data', function (req, res) {
   }));
 });
 
+app.get('/bar-pie-data', function (req, res) {
+  const labels = ['Hombres', 'Mujeres', 'Desconocido'];
+  const data = [
+    200, 350, 80
+  ]
+  const colors = [
+    'rgb(71,188,253)', 'rgb(236,91,223)', 'rgb(127,217,101)'
+  ]
+  res.send(JSON.stringify({
+    labels: labels,
+    data: data,
+    colors: colors
+  }));
+});
+
+app.get('/bar-donut-data', function (req, res) {
+  const labels = ['Hombres', 'Mujeres', 'Desconocido'];
+  const data = [
+    [200, 350, 80],
+    [180, 120, 25],
+    [90, 110, 40]
+  ]
+  res.send(JSON.stringify({
+    labels: labels,
+    data: data
+  }));
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });

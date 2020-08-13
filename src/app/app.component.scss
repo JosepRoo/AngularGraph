@@ -1,0 +1,21 @@
+.graphs-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .graph-box {
+    width: calc(50% - 40px);
+    min-width: 400px;
+    padding: 20px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .graphs-row {
+
+    .graph-box {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+}
